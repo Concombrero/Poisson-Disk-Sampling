@@ -5,8 +5,11 @@
 #include <vector>
 
 const float GRAVITATIONAL = 9.81f;
-const int frameRate = 15;
-const float dt = 1.0f / frameRate;
+const float dt = 1.0f / 15;
+const float RESTITUTION = 0.98;
+const float FROTEMENT=0.999;
+const int TOL_FROTEMENT=5;
+
 
 class Boules {
 private:
@@ -14,6 +17,7 @@ private:
     float v_x, v_y;       // Vitesse
     float radius;         // Rayon
     sf::Color color;      // Couleur
+    float xDraw, yDraw;   // Position pour désiner
 
 public:
     // Constructeur
